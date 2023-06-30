@@ -1,0 +1,62 @@
+<!--/* 参加者 */-->
+<div class="form-row hideIfShutteiNotRequired" data-contains="member">
+  <div class="form-group col-md-12 mb-0">
+    <label class="input_parts_label">参加者</label>
+    <span class="mark_equired">必須</span>
+    <div class="user_selectblock">
+      <div class="schedule_user_selectcol_l">
+        <div class="memberList user_selectbox is_participantlist text-break"></div>
+        <a href="javascript:void(0);" class="removeAllMember" th:data-click-sync="|#${id} .memberList .member|">全員削除</a>
+      </div>
+      <div class="user_selectcol_c"></div>
+      <div class="schedule_user_selectcol_r">
+        <select class="memberGroup form-control">
+          <option th:value="${T(jp.loioz.common.constant.CommonConstant).SANKASHA_SELECT_OPTION_ALL}">全員</option>
+          <option th:each="busho : ${scheduleCommonViewForm.bushoList}"
+                  th:value="${busho.bushoId}" th:text="${busho.bushoName}">部署</option>
+        </select>
+        <!-- 参加者候補 -->
+        <div class="memberCandidates user_selectbox is_userlist text-break" data-type="0">
+          <button th:each="account : ${scheduleCommonViewForm.accountList}"
+                  type="button" class="user_selectbtn member" th:classappend="${!account.Enabled} ? 'hidden'"
+                  th:data-seq="${account.accountSeq}" th:data-type="${account.shozokuBushoIdStr}" th:data-enabled="${account.Enabled}"
+                  th:text="${account.accountName}"></button>
+        </div>
+        <a href="javascript:void(0);" th:data-click-sync="|#${id} .memberCandidates .member:visible|">全員追加</a>
+        <a href="javascript:void(0);" class="flt_r scheduleReferButton" th:if="${useScheduleRefer}">空き状況確認</a>
+        
+        <!-- Add status of invitees -->
+        <div class="participantStatus">
+          <label>
+            <input type="radio" name="status" value="unresponded">
+            未回答
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="status" value="participation">
+            参加
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="status" value="non-participation">
+            不参加
+          </label>
+        </div>
+        
+        <!-- Add attributes of invitees -->
+        <div class="inviteeAttributes">
+          <label>
+            <input type="checkbox" name="optionalParticipation" value="optional">
+            志願参加
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" name="informationSharing" value="sharing">
+            情報共有
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="error_mag_point hidden" id="itemMsg_member"></div>
+  </div>
+</div>
