@@ -1,0 +1,7 @@
+public class ScheduleInputForm {
+    // Existing properties...
+
+    private List<String> participantStatus;
+
+    // Getter and setter methods for participantStatus...
+}
