@@ -3,19 +3,12 @@ Thus changes made previously are saved here instead of the diyaashish-branch.
 
 **status of invitees:**
 
-<div class="participantStatus">
-  <label><input type="radio" name="status" value="unresponded"> 未回答</label>
-  <label><input type="radio" name="status" value="participation"> 参加</label>
-  <label><input type="radio" name="status" value="non-participation"> 不参加</label>
-</div>
+![image](https://github.com/diyaashish/loioz/assets/73493994/961b2b74-2ef6-4a7a-9f2d-cda1f5383357)
 
 This code adds radio buttons for the status of invitees, including "未回答" (unresponded), "参加" (participation), and "不参加" (non-participation).
 
 **attributes of invitees:**
 
-<div class="inviteeAttributes">
-  <label><input type="checkbox" name="optionalParticipation" value="optional"> 志願参加</label>
-  <label><input type="checkbox" name="informationSharing" value="sharing"> 情報共有</label>
-</div>
+![image](https://github.com/diyaashish/loioz/assets/73493994/d17b6210-6233-4158-b170-659796475260)
 
 This code adds checkboxes for the attributes of invitees, including "志願参加" (optional participation) and "情報共有" (information sharing).
