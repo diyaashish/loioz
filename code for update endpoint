@@ -1,0 +1,35 @@
+@ResponseBody
+@RequestMapping(value = "/update", method = RequestMethod.POST)
+public Map<String, Object> update(@Validated({Default.class, Update.class}) @ModelAttribute(INPUT_FORM_NAME) ScheduleInputForm form,
+        BindingResult result) {
+
+    Map<String, Object> response = new HashMap<>();
+
+    // Input validation and error handling code...
+
+    if (result.hasErrors()) {
+        // Validation error handling code...
+        return response;
+    }
+
+    // Extract participant status from the form
+    List<String> participantStatus = form.getParticipantStatus();
+
+    // Update the form with the participant status
+    form.setParticipantStatus(participantStatus);
+
+    // Access database and perform integrity checks if needed...
+
+    try {
+        // Update the schedule using the service
+        service.update(form);
+
+        // Populate the response
+        response.put("succeeded", true);
+        response.put("message", getMessage(MessageEnum.MSG_I00023, "予定"));
+        return response;
+    } catch (Exception e) {
+        // Error handling code...
+        return response;
+    }
+}
