@@ -3,12 +3,14 @@ Thus changes made previously are saved here instead of the diyaashish-branch.
 
 **status of invitees:**
 
-![image](https://github.com/diyaashish/loioz/assets/73493994/961b2b74-2ef6-4a7a-9f2d-cda1f5383357)
+![image](https://github.com/diyaashish/loioz/assets/73493994/bdf435b8-3736-4050-aadc-02cdef7e4d87)
+
 
 This code adds radio buttons for the status of invitees, including "未回答" (unresponded), "参加" (participation), and "不参加" (non-participation).
 
 **attributes of invitees:**
 
-![image](https://github.com/diyaashish/loioz/assets/73493994/d17b6210-6233-4158-b170-659796475260)
+![image](https://github.com/diyaashish/loioz/assets/73493994/4c1ab9d9-c2d6-4a01-8e9a-e566544571b5)
+
 
 This code adds checkboxes for the attributes of invitees, including "志願参加" (optional participation) and "情報共有" (information sharing).
