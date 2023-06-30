@@ -1,0 +1,4 @@
+List<Long> selectMember = form.getMember();
+if (selectMember.isEmpty()) {
+    result.rejectValue("member", null, getMessage(MessageEnum.MSG_E00024, "参加者"));
+}
