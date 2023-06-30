@@ -1,0 +1,25 @@
+// 入力項目のDB整合性チェック
+if (this.acessDBValdateUpdate(form, response)) {
+    // エラーが存在する場合
+    return response;
+}
+
+// Extract participant status from the form
+List<String> participantStatus = form.getParticipantStatus();
+
+// Update the form with the participant status
+form.setParticipantStatus(participantStatus);
+
+try {
+    // Update the schedule with the modified form data
+    service.update(form);
+    response.put("succeeded", true);
+    response.put("message", getMessage(MessageEnum.MSG_I00023, "予定"));
+    return response;
+
+} catch (Exception e) {
+    // Handle the exception
+    response.put("succeeded", false);
+    response.put("message", getMessage(MessageEnum.MSG_E00013));
+    return response;
+}
